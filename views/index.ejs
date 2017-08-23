@@ -1,0 +1,34 @@
+<% include header %>
+<div class="header-cont">
+    <div class="logo">&nbsp;</div>
+    <!--<h1>Nieuws demo homepage</h1>-->
+</div>
+<nav>
+  <h3>Categorieën:</h3>
+  <% for (var i = 0; i < categorieen.length; i++) { %>
+    <a href="/categorieen/<%- i %>"><%- categorieen[i] %></a>
+  <% } %>
+</nav>
+
+
+  <% var teller = 1; %>
+  <% nieuws.forEach(function(item){ %>
+    <section>
+        <div class="info">
+                <h2>
+                    <a href=/items/<%- item.id %>><%- item.titel %></a>
+                </h2>
+                <p class="date"><%- item.datum %></p>
+            </div>
+            <div class="main-img">
+                <a href=/items/<%- item.id %>><img src="/img/<%- item.afbeeldings %>" alt="<%- item.titel %>"></a>
+            </div>
+        <p class="samenvatting">
+          <%- item.samenvatting %>
+        </p>
+        <a class="readmore" href=/items/<%- item.id %>>...</a>
+    </section>
+    <% teller++;}); %>
+
+
+<% include footer %>

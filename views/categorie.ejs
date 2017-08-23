@@ -1,0 +1,30 @@
+<% include header %>
+
+<h1 class="back-cont"><a href="/" class="back">&lsaquo; Back to overview</a></h1>
+<div class="filter">
+<h2 class="maintitle">Nieuwsitems voor categorie <%- categorieen[id] %></h2>
+
+  <% for (var i = 0; i < items.length; i++) { %>
+    <% if (items[i].categorieen.indexOf(categorieen[id]) !== -1) { %>
+      <section>
+          <div class="info">
+              <h2 class="blacktitle">
+                <a href=/items/<%- items[i].id %>><%- items[i].titel %></a>
+              </h2>
+              <p class="date"><%- items[i].datum %></p>
+          </div>
+          <div class="main-img">
+              <a href=/items/<%- items[i].id %>><img src="/img/<%- items[i].afbeeldings %>" alt="<%- items[i].titel %>"></a>
+          </div>
+          
+
+          <p class="samenvatting">
+            <%- items[i].samenvatting %>
+          </p>
+          <a class="readmore" href=/items/<%- items[i].id %>>...</a>
+      </section>
+</div>
+    <% } %>
+  <% } %>
+
+<% include footer %>
