@@ -5,6 +5,7 @@ var app = express();
 app.set('nieuwsFile', require('./config/nieuws.json'));
 app.set('categorieenFile', require('./config/categorieen.json'));
 
+//Siu's comment!//
 
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
